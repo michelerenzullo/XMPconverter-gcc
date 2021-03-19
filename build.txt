@@ -1,0 +1,3 @@
+Please compile and install zlib before this
+
+g++ XMPconverter-gcc.cpp lightMD5.cpp -std=c++2a -lz -Os -s -o XMPconverter-gcc.exe
