@@ -199,9 +199,10 @@ void encode(string path, string& outFileName) {
 	  idx += 3 ; s += readed-1;
 	 }
 	 delete text;*/
-	char* points = nullptr;
-	for (const char *s = text->c_str(); *s; ) if (*s++ == '\n' && *s <= '9' && *s >= '0') { points = strdup(s); delete text;  break; }
+	char* points = nullptr; char* points_address = nullptr;
+	for (const char *s = text->c_str(); *s; ) if (*s++ == '\n' && *s <= '9' && *s >= '0') { points = points_address = strdup(s); delete text;  break; }
 	for (int32 idx = 0; idx < input_size * input_size * input_size * 3;) samples_1[idx++] = strtod(points++, &points);
+	free(points_address);
 
 	uint32 size = (input_size > options.size) ? options.size : input_size;
 	if (input_size > 32) printf("ACR unsupports LUT>32, resampling enabled\n");
