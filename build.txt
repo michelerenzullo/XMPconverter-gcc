@@ -1,4 +1,4 @@
-Please compile and install zlib before this
+Please compile and install zlib before this and libomp-dev on Linux
 
-on Windows: g++ XMPconverter-gcc.cpp lightMD5.cpp -std=c++2a -lz -Os -s -o XMPconverter-gcc.exe
-on Linux: g++ XMPconverter-gcc.cpp lightMD5.cpp -std=c++2a -lz -fopenmp -Os -s -o XMPconverter-gcc.elf
+on Windows: g++ XMPconverter-gcc.cpp lightMD5.cpp -std=c++2a -lz -O3 -s -o XMPconverter-gcc.exe
+on Linux: g++ XMPconverter-gcc.cpp lightMD5.cpp -std=c++2a -lz -fopenmp -O3 -static-libgcc -static-libstdc++ -s -o XMPconverter-gcc.elf
